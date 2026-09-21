@@ -1,23 +1,56 @@
 aid: opendata-barcelona
+
 name: Barcelona Open Data
-description: 'Barcelona Open Data is a company surfaced via the API Evangelist harvest backlog (source:
-  data) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Barcelona Open Data is the official open data portal of the Barcelona City Council, providing free access to a wide range of datasets covering transportation, environment, demographics, public services, and more. The platform enables developers, researchers, and citizens to discover, explore, and reuse municipal data through APIs and downloadable resources, fostering transparency, innovation, and data‑driven decision making across the city.'
+
 url: https://raw.githubusercontent.com/api-evangelist/opendata-barcelona/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:data
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-21'
+
 modified: '2026-09-21'
+
 tags:
 - Company
-apis: []
+- OpenData
+- Barcelona
+- Government
+- DataPortal
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: DomainSecurity
+  url: security/opendata-barcelona-domain-security.yml
 - type: Website
   url: https://opendata-ajuntament.barcelona.cat/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: "OpenAPI endpoint returns a bot detection HTML page, preventing machine-readable spec."
+  evidence:
+    - url: https://opendata-ajuntament.barcelona.cat/openapi.json
+      status: 200
+  checked: 2026-09-21
+x-enrichment:
+  date: '2026-09-21'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
